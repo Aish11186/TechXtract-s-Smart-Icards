@@ -1,0 +1,68 @@
+================================================================================
+          TECHXTRACT SOCIETY - GUIDELINES FOR GENERATING QR CODES
+================================================================================
+
+Welcome! This guide explains how to generate QR codes for each society member's 
+HTML page so people can scan an ID card and instantly see the member's profile.
+
+--------------------------------------------------------------------------------
+1. HOW QR CODES WORK FOR ID CARDS
+--------------------------------------------------------------------------------
+- A QR code is just a visual link to a web address (URL).
+- When a phone camera scans the QR code, it opens that specific member's page:
+  e.g., Members/TXT_PR_01_Devesh.html
+
+IMPORTANT NOTE FOR FRESHERS:
+Local computer paths (like "C:\Users\hp\...") do NOT work when scanned from 
+someone's phone. The HTML files must be hosted online (for example, free on 
+GitHub Pages, Vercel, or a local server) so phones can reach them.
+
+
+--------------------------------------------------------------------------------
+2. STEP-BY-STEP: GENERATING QR CODES USING PYTHON (RECOMMENDED)
+--------------------------------------------------------------------------------
+You can generate all 111 QR codes in 5 seconds using Python.
+
+Step A: Install the required QR library (run in Terminal / Command Prompt):
+    pip install qrcode pillow
+
+Step B: Prepare the generator script:
+    A ready-to-use script named `generate_qrs.py` is included in this folder.
+
+Step C: Set your live URL:
+    Open `generate_qrs.py` and replace `BASE_URL` with your website link:
+    - Example for GitHub Pages:
+      BASE_URL = "https://<your-username>.github.io/TechXtract-s-Smart-Icards"
+    - Example for Local Testing (same WiFi):
+      BASE_URL = "http://192.168.1.10:8000"
+
+Step D: Run the script:
+    python generate_qrs.py
+
+    Result: All 111 QR codes will be saved as high-resolution PNG images in 
+    the `qrcodes/` folder!
+
+
+--------------------------------------------------------------------------------
+3. FREE NO-CODE / MANUAL METHOD (FOR SINGLE CODES)
+--------------------------------------------------------------------------------
+If you only need to create or regenerate a single QR code without coding:
+1. Copy the full link to the member's HTML page.
+2. Go to any free QR generator (e.g., https://www.qr-code-generator.com or https://me-qr.com).
+3. Paste the URL, choose "Static QR", and download as PNG.
+
+
+--------------------------------------------------------------------------------
+4. ID CARD PRINTING & DESIGN CHECKLIST
+--------------------------------------------------------------------------------
+Before printing ID cards, make sure:
+[✔] Minimum Size: Print the QR code at least 2 cm x 2 cm (0.8 x 0.8 inches) 
+    so phone cameras can easily focus and scan it.
+[✔] High Contrast: Always keep black squares on a pure white background.
+[✔] Quiet Zone: Keep a small white border (margin) around the QR code.
+[✔] Test Scan: Always print 1 test sample and scan it with both iPhone and 
+    Android before sending all cards to the final print batch!
+
+================================================================================
+Need help? Reach out to the TechXtract Technical Team leads.
+================================================================================
