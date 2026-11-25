@@ -7,6 +7,9 @@
     <meta name="description" content="Arpit — Graphics team, TechXtract Technical Society.">
     <meta name="theme-color" content="#06080d">
 
+    <!-- Preload critical hero image -->
+    <link rel="preload" as="image" href="arpit-portrait.webp" type="image/webp" fetchpriority="high">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300f0ff' stroke-width='2'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>">
 
@@ -55,14 +58,21 @@
                     <div class="holo-ring"></div>
                     <div class="holo-ring-inner"></div>
 
-                    <!-- Cutout Portrait -->
-                    <img 
-                        src="arpit-portrait.png" 
-                        onerror="this.onerror=null; this.src='arpit-portrait.png';"
-                        alt="Arpit - Graphics team" 
-                        class="portrait-img"
-                        loading="eager"
-                    >
+                    <!-- Cutout Portrait with Ultra-Fast WebP & Fallback -->
+                    <picture class="portrait-picture">
+                        <source srcset="arpit-portrait.webp" type="image/webp">
+                        <img 
+                            src="arpit-portrait.png" 
+                            onerror="this.onerror=null; this.src='arpit-portrait.png';"
+                            alt="Arpit - Graphics team" 
+                            class="portrait-img"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="async"
+                            width="397"
+                            height="750"
+                        >
+                    </picture>
 
                     <!-- Cyber Pedestal Fade -->
                     <div class="pedestal-fade"></div>
@@ -123,6 +133,19 @@
     <footer class="page-footer">
         <p class="footer-text">&copy; 2026 <span>TechXtract</span></p>
     </footer>
+
+    <!-- Reliable Mobile & QR-Scanner Link Opening Script -->
+    <script>
+        document.querySelectorAll('a.social-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || (window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
+                if (isMobile) {
+                    e.preventDefault();
+                    window.location.href = this.href;
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
