@@ -63,6 +63,6 @@ Before printing ID cards, make sure:
 [✔] Test Scan: Always print 1 test sample and scan it with both iPhone and 
     Android before sending all cards to the final print batch!
 
-================================================================================
-Need help? Reach out to the TechXtract Technical Team leads.
-================================================================================
+====================================================================================================================
+Need help? Reach out to the TechXtract Technical Team leads Aishi, Aayush, Akshat, Tanishq, Yogesh and Rishu.
+====================================================================================================================
